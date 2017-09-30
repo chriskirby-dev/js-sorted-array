@@ -8,6 +8,11 @@ var defineProp = function( obj, prop, get, set ){
 		set: set
 	});
 }
+
+var cancelEvent = function(){
+    return false;	
+}
+
 var SortedArray = function( order ){
     var self = this;
     self.order = 'ASC';
@@ -17,14 +22,14 @@ var SortedArray = function( order ){
         get: function(){
             return self[0];
         },
-        set: utils.cancel
+        set: cancelEvent
     });
 
     Object.defineProperty( self, 'last', {
         get: function(){
             return self[self.length-1];
         },
-        set: utils.cancel
+        set: cancelEvent
     });
 
     if( self.order == 'DESC' ){
