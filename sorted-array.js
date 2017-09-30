@@ -178,6 +178,3 @@ SortedArray.prototype.remove = function( v ){
     this.splice( i, 1 );
     return i;
 };
-
-
-exports.SortedArray = SortedArray;
